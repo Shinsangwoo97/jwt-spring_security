@@ -3,9 +3,10 @@ package com.example.jwtspring_security.user.model;
 import com.example.jwtspring_security.user.model.entity.UserEntitiy;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
-
+@Setter
 @Getter
 @AllArgsConstructor
 public class User {

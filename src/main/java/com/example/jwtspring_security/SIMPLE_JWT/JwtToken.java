@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 
-public class jwtToken{
+public class JwtToken {
     public static String generateToken(String userName, String key, long expiredTimeMs) {
         Claims claims = Jwts.claims();
         claims.put("username", userName);
@@ -18,7 +18,7 @@ public class jwtToken{
                 .setClaims(claims) // 정보 유저이름 (중요 하지않은 정보 넣는게 좋음)
                 .setIssuedAt(new Date(System.currentTimeMillis())) //토큰 발행시간
                 .setExpiration(new Date(System.currentTimeMillis() + expiredTimeMs)) // 토큰 만료시간
-                .signWith(getKey(key), SignatureAlgorithm.ES256)
+                .signWith(getKey(key), SignatureAlgorithm.HS256)
                 .compact();
     }
     private static Key getKey(String key) {

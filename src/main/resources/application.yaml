@@ -19,3 +19,8 @@ spring:
       hibernate:
         format_sql: true
         default_batch_fetch_size: 100
+
+jwt:
+  secret-key: jwt_example-shinsang-2023.10.27.secret_key
+  token:
+    expired-time-ms: 2592000

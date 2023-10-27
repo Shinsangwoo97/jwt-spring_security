@@ -3,6 +3,7 @@ package com.example.jwtspring_security.user.model.entity;
 import com.example.jwtspring_security.user.model.UserRole;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
@@ -16,6 +17,7 @@ import java.time.Instant;
 @Setter
 @SQLDelete(sql = "UPDATED user SET deleted_at = NOW() where id=?") //delete 메소드 호출시 삭제대신 이 쿼리를 사용
 @Where(clause = "deleted_at is NULL")
+@NoArgsConstructor
 public class UserEntitiy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
